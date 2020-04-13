@@ -1,0 +1,18 @@
+### test
+GET {{host}}/api/Operator/test
+
+### get all operators
+GET {{host}}/api/Operator/getAll
+
+### create operator
+POST {{host}}/api/Operator/createOrUpdate
+Content-Type: application/json
+
+{
+  "firstName": "New",
+  "lastName": "Operator",
+  "phone": "221 5701XXX",
+  "email": "newoperator@gmail.com",
+  "password": "password",
+  "roleId": "1"
+}
