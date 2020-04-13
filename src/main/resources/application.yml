@@ -1,0 +1,51 @@
+spring:
+  application.name: exercise1-backend
+  datasource:
+    name: exercise1
+    url: jdbc:mysql://localhost/exercise1?useSSL=false
+    username: root
+  jpa:
+    show-sql: false
+    generate-ddl: false
+    hibernate.ddl-auto: none
+    hibernate.use-new-id-generator-mappings: false
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/00-master.xml
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json
+  port: 9000
+#  ssl:
+#    key-store-type: PKCS12
+  http:
+    port:
+      8080
+
+#https:
+#  http-port: 8080
+#  token-check: false
+
+liquibase:
+
+
+---
+spring:
+  profiles: local
+  datasource:
+    password: exercise1
+#  security:
+#    user:
+#      password: admin
+#      name: admin
+
+#server:
+#  ssl:
+#    key-store: keystore.p12
+#    key-store-password: percha01
+#    key-password: percha01
+
+#https:
+#  jwt-secret: exercise1

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create_table_role" author="gustavo">
+        <createTable tableName="role">
+            <column name="id" type="bigint(20)"/>
+            <column name="description" type="varchar(30)"/>
+        </createTable>
+        <addPrimaryKey tableName="role" columnNames="id"/>
+        <addAutoIncrement tableName="role" columnName="id" columnDataType="bigint(20)"/>
+        <addNotNullConstraint tableName="role" columnName="id" columnDataType="bigint(20)"/>
+    </changeSet>
+
+    <changeSet id="populate_table_role" author="gustavo">
+        <insert tableName="role">
+            <column name="id" value="1"/>
+            <column name="description" value="Operador nivel 1"/>
+        </insert>
+        <insert tableName="role">
+            <column name="id" value="2"/>
+            <column name="description" value="Supervisor"/>
+        </insert>
+        <insert tableName="role">
+            <column name="id" value="3"/>
+            <column name="description" value="Gerente"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="create_table_operator" author="gustavo">
+        <createTable tableName="operator">
+            <column name="id" type="bigint(20)"/>
+            <column name="firstName" type="varchar(30)"/>
+            <column name="lastName" type="varchar(30)"/>
+            <column name="phone" type="varchar(15)"/>
+            <column name="email" type="varchar(100)"/>
+            <column name="password" type="bigint(20)"/>
+            <column name="created" type="datetime"/>
+            <column name="role_id" type="bigint(20)"/>
+        </createTable>
+
+        <addPrimaryKey tableName="operator" columnNames="id"/>
+        <addAutoIncrement tableName="operator" columnName="id" columnDataType="bigint(20)"/>
+        <addNotNullConstraint tableName="operator" columnName="id" columnDataType="bigint(20)"/>
+        <addNotNullConstraint tableName="operator" columnName="firstName" columnDataType="varchar(30)"/>
+        <addNotNullConstraint tableName="operator" columnName="lastName" columnDataType="varchar(30)"/>
+        <addNotNullConstraint tableName="operator" columnName="phone" columnDataType="varchar(15)"/>
+        <addNotNullConstraint tableName="operator" columnName="email" columnDataType="varchar(100)"/>
+        <addNotNullConstraint tableName="operator" columnName="password" columnDataType="varchar(64)"/>
+        <addNotNullConstraint tableName="operator" columnName="created" columnDataType="datetime"/>
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 baseTableName="operator"
+                                 constraintName="fk_operator_role"
+                                 onDelete="RESTRICT"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role"/>
+    </changeSet>
+
+    <changeSet id="populate_table_operator" author="gustavo">
+        <insert tableName="operator">
+            <column name="id" value="1"/>
+            <column name="firstName" value="Gustavo"/>
+            <column name="lastName" value="Rohrer"/>
+            <column name="phone" value="221 5701404"/>
+            <column name="email" value="gustavorohrer@gmail.com"/>
+            <column name="password" value="password"/>
+            <column name="created" value="now()"/>
+            <column name="role_id" value="3"/>
+        </insert>
+        <insert tableName="operator">
+            <column name="id" value="2"/>
+            <column name="firstName" value="Juan"/>
+            <column name="lastName" value="Perez"/>
+            <column name="phone" value="221 5701405"/>
+            <column name="email" value="juanperez@gmail.com"/>
+            <column name="password" value="password"/>
+            <column name="created" value="now()"/>
+            <column name="role_id" value="2"/>
+        </insert>
+        <insert tableName="operator">
+            <column name="id" value="3"/>
+            <column name="firstName" value="Roberto"/>
+            <column name="lastName" value="Tuteush"/>
+            <column name="phone" value="221 5701406"/>
+            <column name="email" value="robertotuteush@gmail.com"/>
+            <column name="password" value="password"/>
+            <column name="created" value="now()"/>
+            <column name="role_id" value="1"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

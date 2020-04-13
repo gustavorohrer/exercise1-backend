@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: exercise1
+      MYSQL_DATABASE: exercise1
+    ports:
+      - "3306:3306"
