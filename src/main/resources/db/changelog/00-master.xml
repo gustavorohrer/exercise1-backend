@@ -10,9 +10,9 @@
             <column name="id" type="bigint(20)"/>
             <column name="description" type="varchar(30)"/>
         </createTable>
+        <addNotNullConstraint tableName="role" columnName="id" columnDataType="bigint(20)"/>
         <addPrimaryKey tableName="role" columnNames="id"/>
         <addAutoIncrement tableName="role" columnName="id" columnDataType="bigint(20)"/>
-        <addNotNullConstraint tableName="role" columnName="id" columnDataType="bigint(20)"/>
     </changeSet>
 
     <changeSet id="populate_table_role" author="gustavo">
@@ -41,9 +41,6 @@
             <column name="created" type="datetime"/>
             <column name="role_id" type="bigint(20)"/>
         </createTable>
-
-        <addPrimaryKey tableName="operator" columnNames="id"/>
-        <addAutoIncrement tableName="operator" columnName="id" columnDataType="bigint(20)"/>
         <addNotNullConstraint tableName="operator" columnName="id" columnDataType="bigint(20)"/>
         <addNotNullConstraint tableName="operator" columnName="first_name" columnDataType="varchar(30)"/>
         <addNotNullConstraint tableName="operator" columnName="last_name" columnDataType="varchar(30)"/>
@@ -51,6 +48,8 @@
         <addNotNullConstraint tableName="operator" columnName="email" columnDataType="varchar(100)"/>
         <addNotNullConstraint tableName="operator" columnName="password" columnDataType="varchar(64)"/>
         <addNotNullConstraint tableName="operator" columnName="created" columnDataType="datetime"/>
+        <addPrimaryKey tableName="operator" columnNames="id"/>
+        <addAutoIncrement tableName="operator" columnName="id" columnDataType="bigint(20)"/>
         <addForeignKeyConstraint baseColumnNames="role_id"
                                  baseTableName="operator"
                                  constraintName="fk_operator_role"
