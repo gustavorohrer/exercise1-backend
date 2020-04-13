@@ -4,7 +4,6 @@ import com.example.demo.TestUtils;
 import com.example.demo.model.Role;
 import com.example.demo.repository.RoleRepository;
 import com.example.demo.services.response.Response;
-import com.example.demo.services.response.RoleService;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;

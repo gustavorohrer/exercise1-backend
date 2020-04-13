@@ -1,7 +1,8 @@
-package com.example.demo.services.response;
+package com.example.demo.services;
 
 import com.example.demo.model.Role;
 import com.example.demo.repository.RoleRepository;
+import com.example.demo.services.response.Response;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

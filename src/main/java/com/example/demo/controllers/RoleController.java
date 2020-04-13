@@ -1,6 +1,6 @@
 package com.example.demo.controllers;
 
-import com.example.demo.services.response.RoleService;
+import com.example.demo.services.RoleService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
