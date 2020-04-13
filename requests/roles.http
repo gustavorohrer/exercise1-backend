@@ -1,0 +1,2 @@
+### get all operators
+GET {{host}}/api/Role/getAll

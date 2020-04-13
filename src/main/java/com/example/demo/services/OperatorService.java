@@ -27,8 +27,9 @@ public class OperatorService {
         this.roleRepository = roleRepository;
     }
 
-    public List<Operator> getAll() {
-        return operatorRepository.findAll();
+    public Response getAll() {
+        List<Operator> operatorList = operatorRepository.findAll();
+        return Response.forCode(ResponseCode.OK).withExtra("operators",operatorList);
     }
 
     public Response createOrUpdate(OperatorRequest dto) {

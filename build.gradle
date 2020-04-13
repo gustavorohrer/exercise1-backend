@@ -30,7 +30,12 @@ dependencies {
     annotationProcessor group: 'org.springframework.boot', name: 'spring-boot-configuration-processor'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
     compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
-    runtime('org.liquibase:liquibase-core')
+    compile group: 'org.liquibase', name: 'liquibase-core', version: '3.8.9'
+
+    testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '2.0.7'
+    testCompile group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.7'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.15.0'
+    testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
 }
 
 test {

@@ -1,6 +1,3 @@
-### test
-GET {{host}}/api/Operator/test
-
 ### get all operators
 GET {{host}}/api/Operator/getAll
 

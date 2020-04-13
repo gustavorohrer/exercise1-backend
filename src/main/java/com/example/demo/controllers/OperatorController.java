@@ -1,7 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.controllers.request.OperatorRequest;
-import com.example.demo.model.Operator;
 import com.example.demo.services.OperatorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(OperatorController.API_PATH)
@@ -25,14 +22,9 @@ public class OperatorController {
         this.operatorService = operatorService;
     }
 
-    @GetMapping("/test")
-    public String test() {
-        return "It's working";
-    }
-
     @GetMapping("/getAll")
-    public List<Operator> getAll() {
-        return operatorService.getAll();
+    public ServiceResponse getAll() {
+        return operatorService.getAll().asServiceResponse();
     }
 
     @PostMapping("/createOrUpdate")
