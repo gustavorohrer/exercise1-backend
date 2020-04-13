@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 @MappedSuperclass
 @JsonIgnoreProperties("new")
-public abstract class User extends AbstractPersistable<Long> {
+public class User extends AbstractPersistable<Long> {
 
     @Column(length = 30)
     private String firstName;
