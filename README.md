@@ -20,10 +20,6 @@ If you are running IntelliJ IDEA Ultimate edition, you can create, edit, and exe
 IntelliJ IDEA code editor. All the http tests are in the **requests** folder, and the environments configurations in the 
 **http-client.env.json** file. For more help about this, visit https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html.
 
-## CORS notes
-
-URL `http://localhost:1234` considered as an allowed origin in `CORSFilter.java` class (`src/main/java/com/example/demo/filter/CORSFilter.java`). Frontend project for testing was deployed with Parcel bundler (https://parceljs.org/) and it uses that URL.
-
 ## Additional notes
 
 - Backend security not covered due to time constraints.
